@@ -1,0 +1,79 @@
+{
+  "status": "SUCCESS",
+  "eval_dataset": "C:\\Users\\HP\\.gemini\\antigravity-ide\\scratch\\factory-layout-optimizer\\data\\synthetic\\test",
+  "test_images_count": 4,
+  "confidence_threshold": 0.5,
+  "iou_threshold": 0.5,
+  "overall_precision": 1.0,
+  "overall_recall": 1.0,
+  "mean_average_precision_50": 1.0,
+  "mean_iou": 0.8016,
+  "per_class": {
+    "Cutting machine": {
+      "class_id": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.8377
+    },
+    "Drilling machine": {
+      "class_id": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.7467
+    },
+    "Assembly workstation": {
+      "class_id": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.7986
+    },
+    "Inspection station": {
+      "class_id": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.8405
+    },
+    "Packaging station": {
+      "class_id": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 4,
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.8243
+    },
+    "Storage area": {
+      "class_id": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "ap50": 1.0,
+      "ground_truth_count": 7,
+      "tp": 7,
+      "fp": 0,
+      "fn": 0,
+      "mean_iou": 0.7694
+    }
+  }
+}

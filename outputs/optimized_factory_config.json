@@ -1,0 +1,247 @@
+{
+  "factory_width": 30.0,
+  "factory_height": 20.0,
+  "grid_resolution": 0.5,
+  "min_aisle_width": 1.5,
+  "machines": [
+    {
+      "id": "M1",
+      "name": "CNC Laser Cutter 01",
+      "category": "Cutting machine",
+      "x": 10.0,
+      "y": 10.0,
+      "width": 3.0,
+      "height": 2.0,
+      "class_id": 1,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M2",
+      "name": "CNC Laser Cutter 02",
+      "category": "Cutting machine",
+      "x": 8.0,
+      "y": 5.0,
+      "width": 3.0,
+      "height": 2.0,
+      "class_id": 1,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M3",
+      "name": "Radial Drill Press 01",
+      "category": "Drilling machine",
+      "x": 10.0,
+      "y": 12.0,
+      "width": 2.5,
+      "height": 2.0,
+      "class_id": 2,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M4",
+      "name": "Automated Drill Bank",
+      "category": "Drilling machine",
+      "x": 9.0,
+      "y": 3.0,
+      "width": 2.5,
+      "height": 2.0,
+      "class_id": 2,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M5",
+      "name": "Main Assembly Cell A",
+      "category": "Assembly workstation",
+      "x": 13.0,
+      "y": 11.0,
+      "width": 3.5,
+      "height": 2.5,
+      "class_id": 3,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M6",
+      "name": "Main Assembly Cell B",
+      "category": "Assembly workstation",
+      "x": 11.5,
+      "y": 3.5,
+      "width": 3.5,
+      "height": 2.5,
+      "class_id": 3,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M7",
+      "name": "Quality Optical CMM",
+      "category": "Inspection station",
+      "x": 14.5,
+      "y": 9.0,
+      "width": 2.0,
+      "height": 2.0,
+      "class_id": 4,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M8",
+      "name": "Manual QA Bench",
+      "category": "Inspection station",
+      "x": 15.0,
+      "y": 4.0,
+      "width": 2.0,
+      "height": 2.0,
+      "class_id": 4,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M9",
+      "name": "Palletizing & Wrapping",
+      "category": "Packaging station",
+      "x": 21.5,
+      "y": 8.5,
+      "width": 3.0,
+      "height": 2.5,
+      "class_id": 5,
+      "is_fixed": false,
+      "clearance": 0.5
+    },
+    {
+      "id": "M10",
+      "name": "Heavy Raw Material Buffer",
+      "category": "Storage area",
+      "x": 23.5,
+      "y": 3.0,
+      "width": 4.0,
+      "height": 3.0,
+      "class_id": 6,
+      "is_fixed": true,
+      "clearance": 0.5
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "obs_1",
+      "name": "Structural Column 1",
+      "x": 10.0,
+      "y": 9.0,
+      "width": 1.0,
+      "height": 1.0,
+      "color": "#7F8C8D"
+    },
+    {
+      "id": "obs_2",
+      "name": "Structural Column 2",
+      "x": 20.0,
+      "y": 9.0,
+      "width": 1.0,
+      "height": 1.0,
+      "color": "#7F8C8D"
+    },
+    {
+      "id": "obs_3",
+      "name": "Main Electrical Panel Zone",
+      "x": 14.0,
+      "y": 18.0,
+      "width": 3.0,
+      "height": 2.0,
+      "color": "#95A5A6"
+    }
+  ],
+  "docks": {
+    "Receiving Dock": {
+      "name": "Receiving Dock",
+      "x": 0.0,
+      "y": 8.0,
+      "width": 2.5,
+      "height": 4.0,
+      "color": "#4A90E2"
+    },
+    "Dispatch Dock": {
+      "name": "Dispatch Dock",
+      "x": 27.5,
+      "y": 8.0,
+      "width": 2.5,
+      "height": 4.0,
+      "color": "#50E3C2"
+    }
+  },
+  "flows": [
+    {
+      "from": "Receiving Dock",
+      "to": "M10",
+      "frequency": 80
+    },
+    {
+      "from": "Receiving Dock",
+      "to": "M1",
+      "frequency": 40
+    },
+    {
+      "from": "Receiving Dock",
+      "to": "M2",
+      "frequency": 35
+    },
+    {
+      "from": "M10",
+      "to": "M1",
+      "frequency": 50
+    },
+    {
+      "from": "M10",
+      "to": "M2",
+      "frequency": 45
+    },
+    {
+      "from": "M1",
+      "to": "M3",
+      "frequency": 65
+    },
+    {
+      "from": "M2",
+      "to": "M4",
+      "frequency": 60
+    },
+    {
+      "from": "M3",
+      "to": "M5",
+      "frequency": 55
+    },
+    {
+      "from": "M4",
+      "to": "M6",
+      "frequency": 50
+    },
+    {
+      "from": "M5",
+      "to": "M7",
+      "frequency": 50
+    },
+    {
+      "from": "M6",
+      "to": "M8",
+      "frequency": 45
+    },
+    {
+      "from": "M7",
+      "to": "M9",
+      "frequency": 48
+    },
+    {
+      "from": "M8",
+      "to": "M9",
+      "frequency": 42
+    },
+    {
+      "from": "M9",
+      "to": "Dispatch Dock",
+      "frequency": 85
+    }
+  ]
+}

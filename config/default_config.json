@@ -1,0 +1,83 @@
+{
+  "factory": {
+    "width": 30.0,
+    "height": 20.0,
+    "grid_resolution": 0.5,
+    "min_aisle_width": 1.5,
+    "default_clearance": 0.5,
+    "receiving_dock": {
+      "name": "Receiving Dock",
+      "x": 0.0,
+      "y": 8.0,
+      "width": 2.5,
+      "height": 4.0,
+      "color": "#4A90E2"
+    },
+    "dispatch_dock": {
+      "name": "Dispatch Dock",
+      "x": 27.5,
+      "y": 8.0,
+      "width": 2.5,
+      "height": 4.0,
+      "color": "#50E3C2"
+    }
+  },
+  "equipment_classes": {
+    "1": {"id": 1, "name": "Cutting machine", "color": "#E74C3C", "default_width": 3.0, "default_height": 2.0},
+    "2": {"id": 2, "name": "Drilling machine", "color": "#E67E22", "default_width": 2.5, "default_height": 2.0},
+    "3": {"id": 3, "name": "Assembly workstation", "color": "#2ECC71", "default_width": 3.5, "default_height": 2.5},
+    "4": {"id": 4, "name": "Inspection station", "color": "#9B59B6", "default_width": 2.0, "default_height": 2.0},
+    "5": {"id": 5, "name": "Packaging station", "color": "#F39C12", "default_width": 3.0, "default_height": 2.5},
+    "6": {"id": 6, "name": "Storage area", "color": "#3498DB", "default_width": 4.0, "default_height": 3.0}
+  },
+  "obstacles": [
+    {"id": "obs_1", "name": "Structural Column 1", "x": 10.0, "y": 9.0, "width": 1.0, "height": 1.0, "color": "#7F8C8D"},
+    {"id": "obs_2", "name": "Structural Column 2", "x": 20.0, "y": 9.0, "width": 1.0, "height": 1.0, "color": "#7F8C8D"},
+    {"id": "obs_3", "name": "Main Electrical Panel Zone", "x": 14.0, "y": 18.0, "width": 3.0, "height": 2.0, "color": "#95A5A6"}
+  ],
+  "sample_machines": [
+    {"id": "M1", "name": "CNC Laser Cutter 01", "category": "Cutting machine", "class_id": 1, "x": 3.0, "y": 14.0, "width": 3.0, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M2", "name": "CNC Laser Cutter 02", "category": "Cutting machine", "class_id": 1, "x": 3.0, "y": 4.0, "width": 3.0, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M3", "name": "Radial Drill Press 01", "category": "Drilling machine", "class_id": 2, "x": 8.0, "y": 14.0, "width": 2.5, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M4", "name": "Automated Drill Bank", "category": "Drilling machine", "class_id": 2, "x": 8.0, "y": 4.0, "width": 2.5, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M5", "name": "Main Assembly Cell A", "category": "Assembly workstation", "class_id": 3, "x": 13.5, "y": 13.0, "width": 3.5, "height": 2.5, "is_fixed": false, "clearance": 0.5},
+    {"id": "M6", "name": "Main Assembly Cell B", "category": "Assembly workstation", "class_id": 3, "x": 13.5, "y": 3.5, "width": 3.5, "height": 2.5, "is_fixed": false, "clearance": 0.5},
+    {"id": "M7", "name": "Quality Optical CMM", "category": "Inspection station", "class_id": 4, "x": 19.0, "y": 14.0, "width": 2.0, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M8", "name": "Manual QA Bench", "category": "Inspection station", "class_id": 4, "x": 19.0, "y": 4.0, "width": 2.0, "height": 2.0, "is_fixed": false, "clearance": 0.5},
+    {"id": "M9", "name": "Palletizing & Wrapping", "category": "Packaging station", "class_id": 5, "x": 23.5, "y": 13.5, "width": 3.0, "height": 2.5, "is_fixed": false, "clearance": 0.5},
+    {"id": "M10", "name": "Heavy Raw Material Buffer", "category": "Storage area", "class_id": 6, "x": 23.5, "y": 3.0, "width": 4.0, "height": 3.0, "is_fixed": true, "clearance": 0.5}
+  ],
+  "sample_flows": [
+    {"from": "Receiving Dock", "to": "M10", "frequency": 80},
+    {"from": "Receiving Dock", "to": "M1", "frequency": 40},
+    {"from": "Receiving Dock", "to": "M2", "frequency": 35},
+    {"from": "M10", "to": "M1", "frequency": 50},
+    {"from": "M10", "to": "M2", "frequency": 45},
+    {"from": "M1", "to": "M3", "frequency": 65},
+    {"from": "M2", "to": "M4", "frequency": 60},
+    {"from": "M3", "to": "M5", "frequency": 55},
+    {"from": "M4", "to": "M6", "frequency": 50},
+    {"from": "M5", "to": "M7", "frequency": 50},
+    {"from": "M6", "to": "M8", "frequency": 45},
+    {"from": "M7", "to": "M9", "frequency": 48},
+    {"from": "M8", "to": "M9", "frequency": 42},
+    {"from": "M9", "to": "Dispatch Dock", "frequency": 85}
+  ],
+  "cv_model": {
+    "architecture": "fasterrcnn_resnet50_fpn",
+    "fallback_architecture": "fasterrcnn_mobilenet_v3_large_fpn",
+    "num_classes": 7,
+    "confidence_threshold": 0.5,
+    "nms_iou_threshold": 0.45,
+    "default_weights_path": "models/best_detector.pth"
+  },
+  "optimizer": {
+    "default_algorithm": "simulated_annealing",
+    "cooling_rate": 0.985,
+    "initial_temperature": 500.0,
+    "min_temperature": 0.1,
+    "max_iterations": 1500,
+    "step_size": 1.0,
+    "random_seed": 42
+  }
+}

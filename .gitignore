@@ -1,0 +1,20 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Data & Models (large binaries)
+data/synthetic/train/*.png
+data/synthetic/val/*.png
+data/synthetic/test/*.png
+models/*.pth
+
+# Testing & Cache
+.pytest_cache/
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+Thumbs.db

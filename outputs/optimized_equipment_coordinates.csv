@@ -1,0 +1,11 @@
+ID,Name,Category,X (m),Y (m),Width (m),Height (m),Fixed,Clearance (m)
+M1,CNC Laser Cutter 01,Cutting machine,10.0,10.0,3.0,2.0,False,0.5
+M2,CNC Laser Cutter 02,Cutting machine,8.0,5.0,3.0,2.0,False,0.5
+M3,Radial Drill Press 01,Drilling machine,10.0,12.0,2.5,2.0,False,0.5
+M4,Automated Drill Bank,Drilling machine,9.0,3.0,2.5,2.0,False,0.5
+M5,Main Assembly Cell A,Assembly workstation,13.0,11.0,3.5,2.5,False,0.5
+M6,Main Assembly Cell B,Assembly workstation,11.5,3.5,3.5,2.5,False,0.5
+M7,Quality Optical CMM,Inspection station,14.5,9.0,2.0,2.0,False,0.5
+M8,Manual QA Bench,Inspection station,15.0,4.0,2.0,2.0,False,0.5
+M9,Palletizing & Wrapping,Packaging station,21.5,8.5,3.0,2.5,False,0.5
+M10,Heavy Raw Material Buffer,Storage area,23.5,3.0,4.0,3.0,True,0.5

@@ -1,0 +1,9 @@
+{
+  "original_cost": 8912.75,
+  "optimized_cost": 7464.25,
+  "percent_improvement": 16.25199854141539,
+  "runtime_seconds": 0.32047319412231445,
+  "distance_metric": "manhattan",
+  "original_feasible": true,
+  "optimized_feasible": true
+}

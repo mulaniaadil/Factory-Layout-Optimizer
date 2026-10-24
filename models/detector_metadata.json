@@ -1,0 +1,33 @@
+{
+  "architecture": "fasterrcnn_mobilenet_v3_large_fpn",
+  "epochs": 2,
+  "batch_size": 2,
+  "learning_rate": 0.0005,
+  "device": "cpu",
+  "total_train_time_sec": 46.03,
+  "best_loss": 0.975,
+  "saved_weights": "best_detector.pth",
+  "class_mapping": {
+    "0": "__background__",
+    "1": "Cutting machine",
+    "2": "Drilling machine",
+    "3": "Assembly workstation",
+    "4": "Inspection station",
+    "5": "Packaging station",
+    "6": "Storage area"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.0821,
+      "val_loss": 1.6465,
+      "lr": 0.0005
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.3099,
+      "val_loss": 0.975,
+      "lr": 0.0005
+    }
+  ]
+}
